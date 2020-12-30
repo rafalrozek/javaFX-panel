@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#c9c9c9" height="141.0" layoutX="145.0" layoutY="164.0" stroke="#7c7c7c" strokeType="INSIDE" width="691.0" GridPane.halignment="CENTER">
+         <effect>
+            <InnerShadow height="35.83" radius="27.05" width="74.37">
+               <input>
+                  <Reflection />
+               </input>
+            </InnerShadow>
+         </effect></Rectangle>
+      <Pane layoutX="255.0" layoutY="189.0" prefHeight="100.0" prefWidth="561.0" style="-fx-background-color: BLACK;">
+         <children>
+            <Pane fx:id="wykres11" layoutX="402.0" layoutY="28.0" prefHeight="60.0" prefWidth="112.0" />
+            <Pane fx:id="wykres1" layoutX="92.0" layoutY="26.0" prefHeight="60.0" prefWidth="97.0" />
+            <Pane fx:id="wykres" layoutX="19.0" layoutY="26.0" prefHeight="60.0" prefWidth="40.0" style="-fx-border-radius: 10px;" />
+            <Label layoutX="113.0" layoutY="1.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="TEMPERATURA" textAlignment="CENTER" textFill="#727272">
+               <font>
+                  <Font name="Roboto Thin" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="415.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="ZUŻYCIE WODY" textAlignment="CENTER" textFill="#727272">
+               <font>
+                  <Font name="Roboto Thin" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="1.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="TIMER" textAlignment="CENTER" textFill="#727272">
+               <font>
+                  <Font name="Roboto Thin" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="256.0" layoutY="1.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="OBROTY BĘBNA" textAlignment="CENTER" textFill="#727272">
+               <font>
+                  <Font name="Roboto Thin" size="16.0" />
+               </font>
+            </Label>
+            <Pane fx:id="wykres112" layoutX="244.0" layoutY="27.0" prefHeight="60.0" prefWidth="112.0" />
+         </children>
+         <effect>
+            <Glow>
+               <input>
+                  <Lighting diffuseConstant="2.0" specularConstant="0.24" specularExponent="28.47" surfaceScale="3.01">
+                     <bumpInput>
+                        <Shadow blurType="GAUSSIAN" height="30.725" radius="15.23375" width="32.21" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant azimuth="360.0" elevation="65.93">
+                           <color>
+                              <Color red="0.5131579041481018" green="0.5131579041481018" blue="0.5131579041481018" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </input>
+            </Glow>
+         </effect>
+      </Pane>
+      <Pane fx:id="wykres111" layoutX="145.0" layoutY="163.0" prefHeight="31.0" prefWidth="40.0" />
+      <Pane layoutX="163.0" layoutY="217.0" prefHeight="60.0" prefWidth="84.0">
+         <children>
+            <Circle fx:id="circle" fill="#cdcdcd" layoutX="39.0" layoutY="47.0" radius="30.0" stroke="#d3d3d3" strokeType="INSIDE">
+               <effect>
+                  <Lighting diffuseConstant="1.42">
+                     <bumpInput>
+                        <Bloom />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Circle>
+            <Line fx:id="s0" endX="100.0" layoutX="-32.0" layoutY="47.0" startX="78.5" stroke="#008cff" />
+            <Line fx:id="s1" endX="100.0" layoutX="-50.0" layoutY="66.0" rotate="90.0" startX="78.5" stroke="#008cff" />
+            <Line fx:id="s2" endX="100.0" layoutX="-69.0" layoutY="47.0" startX="78.5" stroke="#008cff" />
+            <Line fx:id="s3" endX="100.0" layoutX="-50.0" layoutY="29.0" rotate="90.0" startX="78.5" stroke="#008cff" />
+         </children>
+      </Pane>
+      <Line endX="695.0" fill="BLACK" layoutX="140.0" layoutY="166.0" startX="6.0" stroke="#0099ff" strokeWidth="3.0" />
+      <Line endX="695.0" fill="BLACK" layoutX="140.0" layoutY="303.0" startX="6.0" stroke="#0099ff" strokeWidth="3.0" />
+      <Label layoutX="163.0" layoutY="175.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="START / STOP" textAlignment="CENTER" textFill="#3c3c3c">
+         <font>
+            <Font name="Roboto Thin" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="758.0" layoutY="370.0" lineSpacing="2.0" mouseTransparent="true" style="-fx-text-inner-color: red;" text="Rafał Rożek &amp; Tomasz Zaremba" textAlignment="CENTER" textFill="#1b1b1b">
+         <font>
+            <Font name="Roboto Thin" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
