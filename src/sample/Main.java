@@ -15,9 +15,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaView;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Random;
@@ -36,6 +40,8 @@ public class Main extends Application {
         Parent root = loader.load();
         Controller ctrl = loader.getController();
 
+        MediaPlayer alarmPlayer = new MediaPlayer(new Media(new File("src/sample/alarm_sound.mp3").toURI().toString()));
+        alarmPlayer.setStopTime(new javafx.util.Duration(2000));
 
         primaryStage.setTitle("Panel");
         primaryStage.setScene(new Scene(root, 1000, 400));
@@ -98,7 +104,6 @@ public class Main extends Application {
             public void onTimeEvent(TimeEvent timeEvent) {
                 tile.getChartData().add(new ChartData("", RND.nextDouble() * 300 + 50, Instant.now()));
                 tile2.getChartData().add(new ChartData("", RND.nextDouble() * 1000 + 50, Instant.now()));
-
             }
         });
 
@@ -106,6 +111,7 @@ public class Main extends Application {
         countdownTile.setOnAlarm(e -> {
             tile.getChartData().add(new ChartData("", 0, Instant.now()));
             tile2.getChartData().add(new ChartData("", 0, Instant.now()));
+            alarmPlayer.play();
         });
 
         //temperatura
@@ -138,6 +144,7 @@ public class Main extends Application {
                 start = 1;
                 alarm = 0;
                 countdownTile.setRunning(true);
+                alarmPlayer.stop();
             }
             else {
                 start = 0;
