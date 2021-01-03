@@ -184,6 +184,9 @@ public class Main extends Application {
         ctrl.circle.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                if(start == 1){
+                    return;
+                }
                 status += 1;
                 if(status == 4){
                     status = 0;
